@@ -1,12 +1,12 @@
 <#
-  Purge PDF files older than 2 weeks, Per Ramesh Kandasamy, 5/7/2019
+  Purge PDF files older than 2 weeks
 #>
-$Computer = 'dev-webgm02'
-$arr = "\\$($Computer)\c$\inetpub\wwwroot\Stagingwebservice.extendedprotectiononline.com\GMDGatewayAPI\ContractPrinted\Receipt",
-  "\\$($Computer)\c$\inetpub\wwwroot\Stagingwebservice.extendedprotectiononline.com\GMDGatewayAPI\ContractPrinted\Pay Plan",
-  "\\$($Computer)\c$\inetpub\wwwroot\Stagingwebservice.extendedprotectiononline.com\GMDGatewayAPI\ContractPrinted",
-  "\\$($Computer)\c$\inetpub\wwwroot\Stagingwebservice.extendedprotectiononline.com\ContractPrinted",
-  "\\$($Computer)\c$\inetpub\wwwroot\Staging.VSCOnlineGM\ContractPrinted"
+$Computer = 'host02'
+$arr = "\\$($Computer)\c$\inetpub\wwwroot\1",
+  "\\$($Computer)\c$\inetpub\wwwroot\2",
+  "\\$($Computer)\c$\inetpub\wwwroot\3",
+  "\\$($Computer)\c$\inetpub\wwwroot\4",
+  "\\$($Computer)\c$\inetpub\wwwroot\5"
 $limit = (Get-Date).AddDays(-7)
 foreach ($pdfloc in $arr)
 {
@@ -15,11 +15,11 @@ foreach ($pdfloc in $arr)
 
 
 <#
-  Purge PDF files older than 2 weeks, Per Ramesh Kandasamy, 5/7/2019
+  Purge PDF files older than 2 weeks
 #>
-$Computer = 'dev-webgm03'
-$arr = "\\$($Computer)\c$\inetpub\wwwroot\Stagingwebservice.extendedprotectiononline.com\ContractPrinted",
-  "\\$($Computer)\c$\inetpub\wwwroot\Staging.VSCOnlineGM\ContractPrinted"
+$Computer = 'host03'
+$arr = "\\$($Computer)\c$\inetpub\wwwroot\1",
+  "\\$($Computer)\c$\inetpub\wwwroot\2"
 $limit = (Get-Date).AddDays(-7)
 foreach ($pdfloc in $arr)
 {
@@ -27,19 +27,19 @@ foreach ($pdfloc in $arr)
 }
 
 <#
-  Purge PDF files older than 1 week, Per Ramesh Kamdasamy
+  Purge PDF files older than 1 week
 #>
 <#
-  DEV-WEBGM02
-  C:\inetpub\wwwroot\Stagingwebservice.extendedprotectiononline.com\GMDGatewayAPI\ContractPrinted\
-  C:\inetpub\wwwroot\Stagingwebservice.extendedprotectiononline.com\GMDGatewayAPI\ContractPrinted\Receipt\
-  C:\inetpub\wwwroot\Stagingwebservice.extendedprotectiononline.com\GMDGatewayAPI\ContractPrinted\Pay Plan\
+  host02
+  C:\inetpub\wwwroot\1
+  C:\inetpub\wwwroot\2
+  C:\inetpub\wwwroot\3
 
 #>
-$Computer = 'dev-webgm02'
-$arr = "\\$($Computer)\c$\inetpub\wwwroot\Stagingwebservice.extendedprotectiononline.com\GMDGatewayAPI\ContractPrinted",
-  "\\$($Computer)\c$\inetpub\wwwroot\Stagingwebservice.extendedprotectiononline.com\GMDGatewayAPI\ContractPrinted\Receipt",
-  "\\$($Computer)\c$\inetpub\wwwroot\Stagingwebservice.extendedprotectiononline.com\GMDGatewayAPI\ContractPrinted\Pay Plan"
+$Computer = 'host02'
+$arr = "\\$($Computer)\c$\inetpub\wwwroot\1",
+  "\\$($Computer)\c$\inetpub\wwwroot\2",
+  "\\$($Computer)\c$\inetpub\wwwroot\3"
 $limit = (Get-Date).AddDays(-7)
 foreach ($pdfloc in $arr)
 {
@@ -47,13 +47,13 @@ foreach ($pdfloc in $arr)
 }
 
 <#
-  Purge PDF files older than 2 weeks, Per Ramesh Kandasamy, 5/7/2019
+  Purge PDF files older than 2 weeks
 #>
-$Computer = 'bedpstvsc01'
-$arr = "\\$($Computer)\D$\WebConfigs\New Vsc Cluster\Report\AdminReports"
+$Computer = 'hosta01'
+$arr = "\\$($Computer)\D$\WebConfigs\1"
 $limit = (Get-Date).AddDays(-14)
-$Computer = 'bedpstvsc01'
-$arr = "\\$($Computer)\D$\WebConfigs\New Vsc Cluster\ContractPrinted"
+$Computer = 'hostb01'
+$arr = "\\$($Computer)\D$\WebConfigs\2"
 $limit = (Get-Date).AddDays(-14)
 foreach ($pdfloc in $arr){ Get-ChildItem -Path $pdfloc | Where-Object { -not $_.PSIsContainer -and $_.LastWriteTime -lt $limit } | Remove-Item }
 

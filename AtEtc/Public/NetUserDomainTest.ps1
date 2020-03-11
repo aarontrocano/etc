@@ -1,4 +1,4 @@
-﻿$a = Get-ADUser -Identity 21641 -Properties SamAccountName,Name,Description,EmployeeID,
+﻿$a = Get-ADUser -Identity snoopy -Properties SamAccountName,Name,Description,EmployeeID,
                 Enabled,LastBadPasswordAttempt,LastLogonDate,LockedOut,PasswordExpired,
                 PasswordLastSet,AccountExpires,PasswordNeverExpires,PasswordNotRequired
 if ($a.Enabled -eq $true) {$AccountActive='Yes'} else {$AccountActive='No'}

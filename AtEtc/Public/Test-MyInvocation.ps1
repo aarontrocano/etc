@@ -1,7 +1,7 @@
 <#
 
 #>
-$alias = 'atrocano'
+$alias = 'user'
 $MyInvocation.InvocationName
 $var = ((Split-Path $MyInvocation.InvocationName)+'\')
 $var

@@ -44,7 +44,7 @@ foreach ($path in $paths) {
 
 
 $CPSCredential = Get-Credential
-$s = 'cardcpssrvdbs03.amyntagroup.com'
+$s = 'hostdbs03.example.com'
 $FarSide = Invoke-Command -ComputerName $s -ScriptBlock {$PSVersionTable.PSVersion.ToString() } -credential $CPSCredential 
 $FarSide
 Write-Host ('Done !')

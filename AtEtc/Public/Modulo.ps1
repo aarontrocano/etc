@@ -1,4 +1,4 @@
-$Import = Import-Csv 'c:\Users\atrocano\Documents\working_Set\Mailboxes.csv'
+$Import = Import-Csv 'file.csv'
 $Total = $Import.count
 $count = 1
 foreach ($alias in $Import) {

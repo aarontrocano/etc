@@ -2,7 +2,7 @@
 
 #>
 $Import = $null
-$Import = Import-Csv -Path ([Environment]::GetFolderPath("Desktop")+'\GMAccounts.csv')
+$Import = Import-Csv -Path ([Environment]::GetFolderPath("Desktop")+'\file.csv')
 
 
 

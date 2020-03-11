@@ -2,11 +2,11 @@
 
 #>
 <#--Save existing config:--#>
-#Get-Recipient -ResultSize Unlimited -Identity 15811 | Select-Object -ExpandProperty EmailAddresses | Format-List
+#Get-Recipient -ResultSize Unlimited -Identity user | Select-Object -ExpandProperty EmailAddresses | Format-List
 
 <#
-Get-Recipient -ResultSize Unlimited -Identity 15811 | Set-Mailbox -PrimarySmtpAddress 'Lynette.Jepson-Mielbrecht@amtrustgroup.com'
-Get-Recipient -ResultSize Unlimited -Identity 15811 | Set-Mailbox -EmailAddresses @{Remove='smtp:lynette@amcomins.com'}
+Get-Recipient -ResultSize Unlimited -Identity user | Set-Mailbox -PrimarySmtpAddress 'user@example.com'
+Get-Recipient -ResultSize Unlimited -Identity user | Set-Mailbox -EmailAddresses @{Remove='smtp:user@example.net'}
 #>
 
 <#
@@ -14,8 +14,8 @@ Get-Recipient -ResultSize Unlimited -Identity 15811 | Select-Object -ExpandPrope
 #>
 
 
-$oldemail = 'Lynette.Jepson-Mielbrecht@amtrustgroup.com'
-$newemail = 'lynette@amcomins.com'
+$oldemail = 'user@example.net'
+$newemail = 'user@example.com'
 $scriptBlock = {
     param (
         [string]$strAlias,
