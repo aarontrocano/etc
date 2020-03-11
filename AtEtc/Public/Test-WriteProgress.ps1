@@ -1,0 +1,2 @@
+for ($i = 1; $i -le 10; $i++ ) {write-progress -activity "Search in Progress" -status "$i% Complete:" -percentcomplete $i; Write-Host "Seconds Passed: " $i; Start-Sleep 1} 
+#$pscmd = [Powershell]::Create();$pscmd.AddScript({for ($i = 1; $i -le 10; $i++ ) {write-progress -activity "Search in Progress" -status "$i% Complete:" -percentcomplete $i; Write-Host "Seconds Passed: " $i; Start-Sleep 1}}).Invoke();$pscmd.streams.progress

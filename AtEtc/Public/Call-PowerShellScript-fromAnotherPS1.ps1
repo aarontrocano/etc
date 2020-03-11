@@ -1,0 +1,1 @@
+& ((Split-Path $MyInvocation.InvocationName)+'\MyScript1.ps1')
